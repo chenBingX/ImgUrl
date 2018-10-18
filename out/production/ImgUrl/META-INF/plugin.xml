@@ -1,15 +1,29 @@
 <idea-plugin>
   <id>com.coorchice.inc.copygithubimgurl</id>
   <name>CopyGithubImgUrl</name>
-  <version>1.0</version>
+  <version>1.2</version>
 
   <description><![CDATA[
-      用于快速复制基于 github 建立的图片库的地址。<br>
+      <h1>CopyGithubImgUrl</h1>
+      <br/>
+      <a href="https://github.com/chenBingX/ImgUrl">GitHub，觉得不错就给 CoorChice 点的star吧！</a>
+      <br/>
+      <br/>
+      用于快速复制基于 github 建立的图片库的地址。
+      <br/>
+      <br/>
       注意需要在项目根目录创建一个 username.txt 文件，内容只需要填写你的 github 名字就可以，也就是每个仓库前的前缀。多的什么都不要多写！
+      <br/>
+      <br/>
+      重要的一点是，目前只支持获取 master 分支的图片地址。
+      <br/>
+      <br/>
+      <a href="https://www.jianshu.com/u/cfec7d70bbec">【https://www.jianshu.com/u/cfec7d70bbec】 在这个地址可以关注到 CoorChice！CoorChice 会在这里不定期的分享各种干货！</a>
+      <br/>
     ]]></description>
 
   <change-notes><![CDATA[
-
+      v1.2 解决在 AndroidStudio 2.3 及以上崩溃的问题。
     ]]>
   </change-notes>
 
@@ -24,7 +38,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="CopyGithubImgUrl" class="ImgUrlAction" text="CopyGithubImgUrl" description="获得文件在github上的地址">
+    <action id="CopyGithubImgUrl" class="coorchice.ImgUrlAction" text="CopyGithubImgUrl" description="获得文件在github上的地址">
       <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="CutCopyPasteGroup"/>
       <keyboard-shortcut keymap="$default" first-keystroke="alt C"/>
     </action>

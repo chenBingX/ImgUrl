@@ -1,8 +1,9 @@
+package coorchice;
+
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.ide.CopyPasteManager;
@@ -13,10 +14,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import java.awt.datatransfer.StringSelection;
 import java.io.File;
 
-public class ImgUrlAction extends com.intellij.openapi.actionSystem.AnAction {
+public class ImgUrlAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent event) {
+        if (event == null){
+            return;
+        }
         Project project = event.getProject();
         VirtualFile selectedFile = DataKeys.VIRTUAL_FILE.getData(event.getDataContext());
         if (project != null && selectedFile != null) {
