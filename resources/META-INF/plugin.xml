@@ -1,0 +1,33 @@
+<idea-plugin>
+  <id>com.coorchice.inc.copygithubimgurl</id>
+  <name>CopyGithubImgUrl</name>
+  <version>1.0</version>
+
+  <description><![CDATA[
+      用于快速复制基于 github 建立的图片库的地址。<br>
+      注意需要在项目根目录创建一个 username.txt 文件，内容只需要填写你的 github 名字就可以，也就是每个仓库前的前缀。多的什么都不要多写！
+    ]]></description>
+
+  <change-notes><![CDATA[
+
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="CopyGithubImgUrl" class="ImgUrlAction" text="CopyGithubImgUrl" description="获得文件在github上的地址">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="CutCopyPasteGroup"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt C"/>
+    </action>
+  </actions>
+
+</idea-plugin>
