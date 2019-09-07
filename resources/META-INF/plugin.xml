@@ -1,9 +1,9 @@
 <idea-plugin>
-  <id>com.coorchice.inc.copygithubimgurl</id>
-  <name>CopyGithubImgUrl</name>
-  <version>1.3</version>
+    <id>com.coorchice.inc.copygithubimgurl</id>
+    <name>CopyGithubImgUrl</name>
+    <version>1.4</version>
 
-  <description><![CDATA[
+    <description><![CDATA[
       <h1>CopyGithubImgUrl</h1>
       <br/>
       <a href="https://github.com/chenBingX/ImgUrl">GitHub，觉得不错就给 CoorChice 点的star吧！</a>
@@ -17,40 +17,43 @@
       <br/>
       重要的一点是，目前只支持获取 master 分支的图片地址。
       <br/>
-      <br/>
-      <a href="https://www.jianshu.com/u/cfec7d70bbec">【https://www.jianshu.com/u/cfec7d70bbec】 在这个地址可以关注到 CoorChice！CoorChice 会在这里不定期的分享各种干货！</a>
-      <br/>
+
     ]]></description>
 
-  <change-notes><![CDATA[
-      v1.2 解决在 AndroidStudio 2.3 及以上崩溃的问题。
-      v1.3 增加直接复制Markdown格式的支持。
+    <change-notes><![CDATA[
+      <ul>
+      <li>07.09.2019 Version 1.4 - 升级版本支持。</li>
+      <li>07.09.2019 Version 1.3 - 增加直接复制Markdown格式的支持。</li>
+      <li>07.09.2019 Version 1.2 解决在 AndroidStudio 2.3 及以上崩溃的问题。</li>
+      </ul>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version until-build="198.*"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="CopyGithubImgUrl" class="coorchice.ImgUrlAction" text="CopyGithubImgUrl" description="获得文件在github上的地址">
-      <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="CutCopyPasteGroup"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="alt C"/>
-    </action>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="CopyGithubImgUrl" class="coorchice.ImgUrlAction" text="CopyGithubImgUrl"
+                description="获得文件在github上的地址">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="CutCopyPasteGroup"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt C"/>
+        </action>
+    </actions>
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="CopyGithubImgUrlMd" class="coorchice.ImgUrlMdAction" text="CopyGithubImgUrlMd" description="获得文件在github上的地址，同时转换为markdown格式">
-      <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CopyGithubImgUrl"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="alt x"/>
-    </action>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="CopyGithubImgUrlMd" class="coorchice.ImgUrlMdAction" text="CopyGithubImgUrlMd"
+                description="获得文件在github上的地址，同时转换为markdown格式">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CopyGithubImgUrl"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt x"/>
+        </action>
+    </actions>
 
 </idea-plugin>
